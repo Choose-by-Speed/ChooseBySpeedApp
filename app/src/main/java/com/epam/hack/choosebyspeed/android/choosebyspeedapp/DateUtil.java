@@ -9,7 +9,8 @@ import java.util.Date;
 public class DateUtil {
     public static String format(Date date) {
         //DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getApplicationContext());
-        SimpleDateFormat format = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
+        //SimpleDateFormat format = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd hh:mm a");
 
         return format.format(date);
     }

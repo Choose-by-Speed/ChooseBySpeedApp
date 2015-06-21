@@ -29,7 +29,7 @@ public class OrderDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private Delivery mItem;
+    private Delivery mDelivery;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -46,7 +46,7 @@ public class OrderDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = OrdersDas.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mDelivery = OrdersDas.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
 
@@ -56,11 +56,11 @@ public class OrderDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_order_detail, container, false);
 
         // Show the dummy content as text in a TextView.
-        if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.order_name)).setText(String.valueOf(mItem.id));
-            ((TextView) rootView.findViewById(R.id.order_phone)).setText(String.valueOf(mItem.provider.phoneNumber));
-            ((TextView) rootView.findViewById(R.id.order_time_start)).setText(String.valueOf(mItem.getTimeStartString()));
-            ((TextView) rootView.findViewById(R.id.order_time_end)).setText(String.valueOf(mItem.getTimeEndString()));
+        if (mDelivery != null) {
+            ((TextView) rootView.findViewById(R.id.order_name)).setText(mDelivery.getCategoryProviderString());
+            ((TextView) rootView.findViewById(R.id.order_phone)).setText(mDelivery.provider.phoneNumber);
+            ((TextView) rootView.findViewById(R.id.order_time_start)).setText(mDelivery.getTimeStartString());
+            ((TextView) rootView.findViewById(R.id.order_time_end)).setText(mDelivery.getTimeEndString());
         }
 
         return rootView;

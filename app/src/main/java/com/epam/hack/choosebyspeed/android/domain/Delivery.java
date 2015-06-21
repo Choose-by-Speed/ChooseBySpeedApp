@@ -33,11 +33,15 @@ public class Delivery {
         return DateUtil.format(timeEnd);
     }
 
+    public String getCategoryProviderString(){
+        return provider.category.name
+                +" from "+provider.name;
+    }
+
 
     @Override
     public String toString(){
-        return provider.category.name
-                +" from "+provider.name
+        return getCategoryProviderString()
                 +" "+getTimeStartString();
 
 

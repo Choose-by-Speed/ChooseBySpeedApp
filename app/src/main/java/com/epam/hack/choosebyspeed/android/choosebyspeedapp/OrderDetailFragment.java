@@ -7,8 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.epam.hack.choosebyspeed.android.domain.Delivery;
+import com.epam.hack.choosebyspeed.android.domain.OrdersDas;
 
-import com.epam.hack.choosebyspeed.android.choosebyspeedapp.dummy.DummyContent;
+
+//import com.epam.hack.choosebyspeed.android.choosebyspeedapp.dummy.DummyContent;
 
 /**
  * A fragment representing a single Order detail screen.
@@ -26,7 +29,7 @@ public class OrderDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private Delivery mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -43,7 +46,7 @@ public class OrderDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = OrdersDas.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
 
@@ -54,7 +57,10 @@ public class OrderDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.order_detail)).setText(mItem.content);
+            ((TextView) rootView.findViewById(R.id.order_name)).setText(String.valueOf(mItem.id));
+            ((TextView) rootView.findViewById(R.id.order_phone)).setText(String.valueOf(mItem.provider.phoneNumber));
+            ((TextView) rootView.findViewById(R.id.order_time_start)).setText(String.valueOf(mItem.getTimeStartString()));
+            ((TextView) rootView.findViewById(R.id.order_time_end)).setText(String.valueOf(mItem.getTimeEndString()));
         }
 
         return rootView;

@@ -1,5 +1,45 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/order_detail"
-    style="?android:attr/textAppearanceLarge" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp" android:textIsSelectable="true"
-    tools:context=".OrderDetailFragment" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_detail_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order"
+        android:id="@+id/order_name"
+        android:gravity="center"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:id="@+id/order_phone"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:id="@+id/order_time_start" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Received"
+        android:id="@+id/buttonOrderReceived" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End"
+        android:id="@+id/order_time_end" />
+
+
+</LinearLayout>
